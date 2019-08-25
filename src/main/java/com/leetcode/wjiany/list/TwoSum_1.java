@@ -1,4 +1,4 @@
-package com.leetcode.wjiany.dp;
+package com.leetcode.wjiany.list;
 
 import org.junit.Test;
 
