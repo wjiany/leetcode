@@ -20,6 +20,9 @@ public class TwoSum_1 {
                 map.put(nums[i],i);
             }
         }
+        StringBuilder s = new StringBuilder();
+        s.reverse();
+
         return null;
     }
 }
