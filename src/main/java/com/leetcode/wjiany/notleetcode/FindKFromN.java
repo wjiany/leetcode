@@ -1,4 +1,4 @@
-package com.leetcode.wjiany.others;
+package com.leetcode.wjiany.notleetcode;
 
 import org.junit.Test;
 
