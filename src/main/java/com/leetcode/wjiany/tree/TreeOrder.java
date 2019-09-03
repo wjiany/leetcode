@@ -82,7 +82,7 @@ public class TreeOrder {
         }
     }
 
-    //中序非递归
+    //中序非递归 liuxi
     public void inOrder2(TreeNode treeNode){
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = treeNode;
