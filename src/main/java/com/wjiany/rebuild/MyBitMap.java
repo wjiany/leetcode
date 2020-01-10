@@ -22,7 +22,6 @@ public class MyBitMap {
         MyBitMap myBitMap = new MyBitMap(1000);
         myBitMap.set1(99);
         System.out.println(myBitMap.isExist(99));
-
     }
 
     private int[] arrayBytes;
@@ -38,7 +37,6 @@ public class MyBitMap {
     }
     public void set1(int num){
         int indexByte = num >> 5;// 第几个字节，（除以32的商）（0-31，每个int）
-
         //方法一：
         int indexBit = num & 31;  //第几位，（除以32得到的余数）
         arrayBytes[indexByte] |= 1<< indexBit;   //将某位置置 1 ，1往左位移，然后与原数或运算
