@@ -1,4 +1,4 @@
-package com.wjiany.leetcode.notleetcode;
+package com.wjiany.rebuild.algorithm;
 
 import org.junit.Test;
 

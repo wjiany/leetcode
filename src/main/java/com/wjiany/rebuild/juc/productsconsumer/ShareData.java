@@ -1,4 +1,4 @@
-package com.wjiany.rebuild.algorithm.procondemo;
+package com.wjiany.rebuild.juc.productsconsumer;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

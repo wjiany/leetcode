@@ -1,4 +1,4 @@
-package com.wjiany.leetcode.examine;
+package com.wjiany.examine;
 import java.util.Scanner;
 
 public class MainBefore {

@@ -1,4 +1,4 @@
-package com.wjiany.leetcode.examine;
+package com.wjiany.examine;
 import java.math.BigDecimal;
 import java.util.*;
 

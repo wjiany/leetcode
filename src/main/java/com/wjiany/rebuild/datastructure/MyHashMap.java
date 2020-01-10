@@ -1,4 +1,4 @@
-package com.wjiany.rebuild;
+package com.wjiany.rebuild.datastructure;
 
 import java.util.LinkedList;
 

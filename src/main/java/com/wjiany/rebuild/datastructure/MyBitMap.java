@@ -1,8 +1,6 @@
-package com.wjiany.rebuild;
+package com.wjiany.rebuild.datastructure;
 
 import org.junit.Test;
-
-import java.util.BitSet;
 
 //https://blog.csdn.net/woshilijiuyi/article/details/88778214
 

@@ -1,10 +1,9 @@
-package com.wjiany.rebuild.algorithm.procondemo;
+package com.wjiany.rebuild.algorithm;
 
+import com.wjiany.rebuild.juc.productsconsumer.MyResource;
 import org.junit.Test;
 
 import java.util.concurrent.ArrayBlockingQueue;
-
-import static org.junit.Assert.*;
 
 public class MyResourceTest {
 

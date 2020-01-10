@@ -1,4 +1,4 @@
-package com.wjiany.leetcode.examine;
+package com.wjiany.examine;
 import java.math.BigInteger;
 import java.util.PriorityQueue;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.wjiany.rebuild;
+package com.wjiany.rebuild.algorithm.loadbalance;
 
 import org.junit.Test;
 

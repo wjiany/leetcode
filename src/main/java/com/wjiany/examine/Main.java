@@ -1,8 +1,5 @@
-package com.wjiany.leetcode.examine;
+package com.wjiany.examine;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
