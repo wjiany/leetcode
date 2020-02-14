@@ -1,4 +1,4 @@
-package com.wjiany.rebuild.datastructure;
+package com.wjiany.rebuild.datastructure.bit;
 
 import org.junit.Test;
 

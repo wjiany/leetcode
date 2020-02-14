@@ -2,6 +2,8 @@ package com.wjiany.leetcode.Array2P;
 
 import org.junit.Test;
 
+import java.util.*;
+
 /**
  * 求两个数组中位数
  */
@@ -12,8 +14,26 @@ public class FindMedianSortedArrays_4 {
         System.out.println(findMedianSortedArrays(new int[]{1,3},new int[]{2,4}));
     }
 
-    //todo 官方和下边的递归方法有待学习
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0;i<nums1.length;i++){
+            list.add(nums1[i]);
+        }
+        for(int i = 0;i<nums2.length;i++){
+            list.add(nums2[i]);
+        }
+        Collections.sort(list);
+        boolean isOdd = list.size() % 2 == 1;
+        if(isOdd){
+            return list.get(list.size()/2);
+        }else {
+            return (list.get(list.size()/2)+list.get(list.size()/2 -1))/2.0;
+        }
+
+    }
+    //todo 官方和下边的递归方法有待学习
+    public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
         int length1 = nums1.length;
         int length2 = nums2.length;
         boolean flag = (length1+length2)%2==1;
