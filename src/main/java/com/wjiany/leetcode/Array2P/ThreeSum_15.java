@@ -15,6 +15,28 @@ public class ThreeSum_15 {
     public void test(){
         System.out.println(threeSum(new int[]{-1,0,1,2,-1,-4}));
     }
+    public List<List<Integer>> threeSum_error2(int[] nums) {
+        List<List<Integer>> lists = new ArrayList<>();
+        for (int i = 0; i <nums.length ; i++) {
+            int tmp = nums[i];
+            Set<Integer> set = new HashSet<>();
+            for (int j = i+1; j < nums.length; j++) {
+                boolean contains = set.contains(-tmp - nums[j]);
+                if(contains){
+                    List<Integer> list = new ArrayList<>();
+                    list.add(tmp);
+                    list.add(nums[j]);
+                    list.add(-tmp-nums[j]);
+                    lists.add(list);
+                }else {
+                    set.add(nums[j]);
+                }
+            }
+
+        }
+        return lists;
+
+    }
     public List<List<Integer>> threeSum(int[] nums) {
             List<List<Integer>> ans = new ArrayList();
             int len = nums.length;

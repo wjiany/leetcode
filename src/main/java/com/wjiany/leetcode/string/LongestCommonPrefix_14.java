@@ -1,9 +1,14 @@
 package com.wjiany.leetcode.string;
 
-import java.util.HashSet;
-import java.util.Set;
+
+import org.junit.Test;
 
 public class LongestCommonPrefix_14 {
+    @Test
+    public void test(){
+        System.out.println(longestCommonPrefix(new String[]{"dog","dacecar","dar"}));
+    }
+
     public String longestCommonPrefix(String[] strs) {
         int length = strs.length;
         if(length == 0){
@@ -15,7 +20,6 @@ public class LongestCommonPrefix_14 {
         String str = strs[0];
         String res = "";
         String tmp = "";
-        int max = 0;
         for (int j = str.length() ;j>0 ;j--){
             tmp = str.substring(0,j);
             int time = 0;
@@ -23,9 +27,9 @@ public class LongestCommonPrefix_14 {
                 if(strs[i].startsWith(tmp) ){
                     time++;
                 }
-                if(time == length-1 && tmp.length() > max){
-                    max = tmp.length();
+                if(time == length-1){
                     res = tmp;
+                    return res;
                 }
             }
         }

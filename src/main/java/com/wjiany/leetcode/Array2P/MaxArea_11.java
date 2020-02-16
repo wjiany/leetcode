@@ -1,9 +1,16 @@
 package com.wjiany.leetcode.Array2P;
 
+import org.junit.Test;
+
+
 /**
  * 求最大装水
  */
 public class MaxArea_11 {
+    @Test
+    public void test(){
+        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+    }
     /**
      * 双指针
      * @param height
