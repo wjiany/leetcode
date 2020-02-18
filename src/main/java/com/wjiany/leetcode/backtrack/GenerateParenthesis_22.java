@@ -1,5 +1,7 @@
 package com.wjiany.leetcode.backtrack;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +24,28 @@ import java.util.List;
  * 2,左括号的数量需要大于等于右括号的数量
  */
 public class GenerateParenthesis_22 {
+    @Test
+    public void test(){
+        System.out.println(generateParenthesis(3));
+    }
     List<String> list = new ArrayList<>();
     public List<String> generateParenthesis(int n) {
-        backTracking("",0,0,n);
+       // backTracking("",0,0,n);
+        fun("",n,n);
         return list;
+    }
+
+    public void  fun(String res,int left, int right){
+        if(left==0&&right == 0){
+            list.add(res);
+            return;
+        }
+        if(left > 0){
+            fun(res+"(",left-1,right);
+        }
+        if (left < right){
+            fun(res+")",left,right-1);
+        }
     }
     public void backTracking(String res,int l,int r,int total){
        if(r == total){
