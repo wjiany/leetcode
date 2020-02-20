@@ -18,7 +18,7 @@ package com.wjiany.leetcode.Array2P;
  */
 
 public class Search_33 {
-    public int search(int[] nums, int target) {
+    public int search_1(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
@@ -30,6 +30,8 @@ public class Search_33 {
             if (nums[mid] == target) {
                 return mid;
             }
+            ///3 4 5   -6- 7 1 2 :  target=1 ,左边比中间少， 寻找转点左或者 右
+            //  6 7 1  -2-  3 4 5  ：  target = 4， 左边比中间大
             if (nums[l] <= nums[mid]) {
                 if (target >= nums[l] && target < nums[mid]) {
                     r = mid - 1;
