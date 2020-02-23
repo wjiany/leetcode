@@ -1,5 +1,6 @@
-package com.wjiany.leetcode.list;
+package com.wjiany.leetcode.linkedlist;
 
+import com.wjiany.leetcode.linkedlist.ListNode;
 import org.junit.Test;
 
 /**

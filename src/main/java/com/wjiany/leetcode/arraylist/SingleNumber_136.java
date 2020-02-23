@@ -1,4 +1,4 @@
-package com.wjiany.leetcode.list;
+package com.wjiany.leetcode.arraylist;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,6 @@
-package com.wjiany.leetcode.list;
+package com.wjiany.leetcode.linkedlist;
+
+import com.wjiany.leetcode.linkedlist.ListNode;
 
 /**
  * 某段链表反转
