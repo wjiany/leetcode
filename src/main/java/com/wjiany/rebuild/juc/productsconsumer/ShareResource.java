@@ -2,12 +2,14 @@ package com.wjiany.rebuild.juc.productsconsumer;
 
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class MyResource {
-
-
+/**
+ * 阻塞队列实现生产消费
+ */
+public class ShareResource {
     /**
      * 默认开启 进行生产消费的交互
      */
@@ -19,7 +21,7 @@ public class MyResource {
 
     private BlockingQueue<String> blockingQueue = null;
 
-    public MyResource(BlockingQueue<String> blockingQueue) {
+    public ShareResource(BlockingQueue<String> blockingQueue) {
         this.blockingQueue = blockingQueue;
         System.out.println(blockingQueue.getClass().getName());
     }
@@ -56,7 +58,6 @@ public class MyResource {
                 return;
             }
             System.out.println(Thread.currentThread().getName() + "消费队列" + result + "成功");
-
         }
     }
     public void stop() throws Exception{

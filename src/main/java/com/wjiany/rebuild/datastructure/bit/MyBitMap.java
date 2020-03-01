@@ -9,9 +9,12 @@ import org.junit.Test;
  * 1，多文件分别比较处理；
  * 2，位图处理。
  *
- *
- * 此外，可以直接使用BitSet，内部使用的是long类型来保存bit，因此判断Byte位置时wordIndex是除以64，ADDRESS_BITS_PER_WORD ：即>>6，而不是5
- * 求余数时候 64-1，而不是 32-1，
+ * >> 右移补符号位
+ * << 左移补0
+ * >>> 右移补0
+ * ------此外，可以直接使用BitSet，内部使用的是long类型来保存bit，
+ * ------因此判断Byte位置时wordIndex是除以64，ADDRESS_BITS_PER_WORD ：即>>6，而不是5
+ * ------求余数时候 64-1，而不是 32-1，
  */
 
 public class MyBitMap {
@@ -24,14 +27,14 @@ public class MyBitMap {
 
     private int[] arrayBytes;
     public MyBitMap(){};// Java 写了有参构造器就不会有无参了，要显示写出来，不写的话，junit4 会报错
-     MyBitMap(int size){
+    public MyBitMap(int size){
         arrayBytes = new int[size/32+1];
     }
     //不存在某个数，将第几个位置为0
     public void set0(int num){
-        int indexByte = num >> 5;// 第几个字节，（除以32的商）（0-31，每个int）
-        int indexBit = num & 31;  //第几位，（除以32得到的余数）
-        arrayBytes[indexByte] &= ~(1<< indexBit);  //将某位置置 0 ，1往左位移，然后取反，然后与原数且运算
+        int indexByte = num >> 5;// num位应落在第几个字节，（除以32的商，一个int4个字节，32位）（0-31，每个int）
+        int indexBit = num & 31;  //第几位，（除以32得到的余数，也就是保留0-30位的数字）
+        arrayBytes[indexByte] &= ~(1<< indexBit);  //将某位置置 0 ，1往左位移indexBit，然后取反，然后与原数且运算
     }
     public void set1(int num){
         int indexByte = num >> 5;// 第几个字节，（除以32的商）（0-31，每个int）
