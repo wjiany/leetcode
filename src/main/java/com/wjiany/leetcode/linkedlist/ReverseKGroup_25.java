@@ -34,7 +34,7 @@ public class ReverseKGroup_25 {
     }
 
     /**
-     *
+     *k个一组逆序，不足的不逆序
      * @param head
      * @param k
      * @return
