@@ -46,7 +46,7 @@ public class SpiralOrder_54 {
         }
         return result;
     }
-    //只能边缘输出
+    //只能边缘输出,有问题
     public List<Integer> spiralOrder_error(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;

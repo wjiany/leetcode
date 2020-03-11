@@ -4,7 +4,7 @@ package com.wjiany.leetcode.design;
 import java.util.*;
 
 /**
- * leetcode   146
+ * leetcode   LRUCache_146
  */
 public class LRUCache extends LinkedHashMap{
 

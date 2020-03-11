@@ -86,7 +86,7 @@ public class ReverseKGroup_25 {
             head = newHead;
         }
         if(head!=null){
-            tail.next = fun(head, k);
+            tail.next = fun2(head, k);
         }
         return dummy.next;
     }
