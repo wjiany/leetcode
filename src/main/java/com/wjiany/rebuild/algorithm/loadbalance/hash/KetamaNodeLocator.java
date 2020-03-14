@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-
+/**
+ * https://blog.csdn.net/sdausxc/article/details/52059608
+ */
 public final class KetamaNodeLocator {
 	
 	private TreeMap<Long, Node> ketamaNodes;
@@ -51,8 +53,8 @@ public final class KetamaNodeLocator {
 //				key = ketamaNodes.firstKey();
 //			}
 		}
-		
-		
+
+
 		rv=ketamaNodes.get(key);
 		return rv;
 	}
