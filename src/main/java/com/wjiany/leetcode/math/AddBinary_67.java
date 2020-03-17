@@ -5,8 +5,34 @@ import org.junit.Test;
 public class AddBinary_67 {
     @Test
     public void  test(){
-        System.out.println(addBinary("1","111"));
+        System.out.println(addBinary_1("1","111"));
     }
+    public String addBinary_1(String a, String b) {
+        int alen = a.length();
+        int blen = b.length();
+        int aIndex = alen-1;
+        int bIndex = blen-1;
+        int add = 0;
+        StringBuilder res = new StringBuilder();
+        while (aIndex>=0 || bIndex>=0){
+            int aAdd = aIndex>=0?a.charAt(aIndex) - '0':0;
+            int bAdd = bIndex>=0?b.charAt(bIndex) - '0':0;
+            int sum = aAdd + bAdd + add;
+            res.append(sum%2);
+            add = sum/2;
+            aIndex--;
+            bIndex--;
+        }
+        if(add!=0) res.append(add);
+        return res.reverse().toString();
+    }
+
+    /**
+     * 原来写的
+     * @param a
+     * @param b
+     * @return
+     */
     public String addBinary(String a, String b) {
         int aLen = a.length();
         int bLen = b.length();
