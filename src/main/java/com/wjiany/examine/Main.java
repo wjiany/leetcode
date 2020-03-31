@@ -1,54 +1,46 @@
 package com.wjiany.examine;
 
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
         sc.nextLine();
-        int[] arr = new int[num];
-        Integer index = null;
-        int max = 0;
-        Integer min = null;
-        Integer left = num;
-        Integer right = -1;
-        for (int i = 0 ;i< num;i++){
-            arr[i] = sc.nextInt();
-            max +=arr[i];
-            if(arr[i]<=0){
-                left = Math.min(left,i);
-                right = Math.max(right,i);
-                if(min == null){
-                    min = arr[i];
-                    index = i;
-                }else if(arr[i]<min){
-                    min = arr[i];
-                    index = i;
+        String anInt = sc.next();
+        char[] tmpChars = new char[n];
+        for (int i = 0; i < n; i++) {
+            tmpChars[i] = anInt.charAt(i);
+        }
+        for (int i = 0; i < m; i++) {
+            sc.nextLine();
+            String next = sc.next();
+            if(next.equals("q")){
+                System.out.println(fun(tmpChars));
+            }else if(next.equals("c")){
+                int start = sc.nextInt()-1;
+                int end = sc.nextInt()-1;
+                for (int j = start; j <= end; j++) {
+                    tmpChars[j] = tmpChars[j] == '0'?'1':'0';
                 }
             }
         }
-        if(index == null){
-            System.out.println(max);
-            return;
+
+    }
+
+    private static int fun(char[] chars) {
+        int max = 1;
+        int count = 1;
+        for (int i = 1; i < chars.length; i++) {
+            if(chars[i] >= chars[i-1]){
+                count++;
+                max = Math.max(max,count);
+            }else {
+                count=1;
+            }
         }
-        if(left == right && left == index){
-            System.out.println(max-arr[index]);
-            return;
-        }
-        int tmp1 = max;
-        int tmp2 = max;
-        int tmp3 = max;
-        for (int i = left;i<=index;i++){
-            tmp1 -=arr[i];
-        }
-        for (int i = index;i<=right;i++){
-            tmp2 -=arr[i];
-        }
-        for (int i = left;i<=right;i++){
-            tmp3 -=arr[i];
-        }
-        System.out.println(Math.max(tmp1,Math.max(tmp2,tmp3)));
-        return;
+        return max;
     }
 }

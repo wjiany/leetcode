@@ -61,19 +61,6 @@ public class MySort {
             }
         }
     }
-    //每次交换不太好
-    @Deprecated
-    public void selectSort_low(int[] nums){
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i+1; j < nums.length; j++) {
-                if(nums[i] > nums[j]){
-                    swap(nums,i,j);
-                }
-
-            }
-        }
-    }
-
     private void  swap(int[] nums ,int left,int right){
         int tmp = nums[left];
         nums[left] = nums[right];
@@ -211,8 +198,8 @@ public class MySort {
      * 将parent 保证为以下子树的最大值，同时循环下去，
      * 最终保证的叶子节点的父节点比叶子节点大，所以要从最叶子的父节点开始使用此方法
      * @param array
-     * @param parent
-     * @param length
+     * @param parent    父亲节点index
+     * @param length     父亲节点树的长度
      */
     private void heapAdjust(int[] array, int parent, int length) {
         int temp = array[parent]; // temp保存当前父节点
